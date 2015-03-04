@@ -1,0 +1,92 @@
+@import "compass";
+@import "compass/reset";
+/** Reset default styles end **/
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,700&subset=latin,cyrillic);
+/** Add fonts end **/
+
+%in {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    font-family: 'Roboto', sans-serif, Arial;
+}
+
+.clearfix {
+    *zoom: 1;
+    &:before, &:after {
+        display: table;
+        line-height: 0;
+        content: "";
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: #399fd4;
+    &:hover {
+        border-bottom: 1px solid #399fd4;
+    }
+}
+/**  General styles end **/
+
+.header-wrap {
+    background: #181818;
+    header {
+        @extend %in;
+        padding: 25px 10px;
+        .logo {
+            font-size: 30px;
+            float: left;
+            &:hover {
+                border: none;
+            }
+        }
+        nav {
+            float: right;
+            margin-top: 14px;
+            ul {
+                li {
+                    display: inline;
+                    margin-left: 35px;
+                    font-size: 13px;
+                    a {
+                        font-size: 13px;
+                        text-transform: uppercase;
+                        &:hover {
+                            color: #fff;
+                            border: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/** Header end **/
+
+.container {
+    @extend %in;
+    padding: 30px 0;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 0;
+    font-size: 13px;
+    border-top: 1px solid #eaeaea;
+    color: #b7b7b7;
+}
+/** Footer end **/
