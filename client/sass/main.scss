@@ -5,6 +5,9 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,700&subset=latin,cyrillic);
 /** Add fonts end **/
 
+$black: #27272b;
+/** Variables end **/
+
 %in {
     max-width: 1000px;
     margin: 0 auto;
@@ -40,10 +43,17 @@ a {
         border-bottom: 1px solid #399fd4;
     }
 }
+
+h2{
+    font-size: 35px;
+    text-align: center;
+    font-weight: 100;
+    padding: 15px 0;
+}
 /**  General styles end **/
 
 .header-wrap {
-    background: #181818;
+    background: $black;
     header {
         @extend %in;
         padding: 25px 10px;

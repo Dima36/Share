@@ -1,18 +1,26 @@
-Template.addImage.created = function () {
+Template['loadTest'].helpers({
+  src: function() {
+    if (this.type.indexOf('image') >= 0) {
+      return 'upload/' + this.path;
+    } else return 'file_icon.png';
+  }
+});
+
+Template.loadTest.created = function () {
     Uploader.init(this);
 }
 
-Template.addImage.rendered = function () {
+Template.loadTest.rendered = function () {
     Uploader.render.call(this);
 };
 
-Template.addImage.events({
+Template.loadTest.events({
     'click .start': function (e) {
         Uploader.startUpload.call(Template.instance(), e);
     }
 });
 
-Template.addImage.helpers({
+Template.loadTest.helpers({
     'infoLabel': function () {
         var instance = Template.instance();
 
