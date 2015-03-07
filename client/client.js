@@ -6,11 +6,8 @@ Meteor.startup(function () {
 
 Template.shareList.helpers({
     src: function () {
-        if (this.type.indexOf('image') >= 0) {
-            return 'upload' + this.path;
-        } else return 'file_icon.png';
+        return 'upload' + this.path;
     },
-
     images: function () {
         return Images.find();
     }
