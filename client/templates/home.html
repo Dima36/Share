@@ -1,5 +1,4 @@
 <template name="home">
-    {{> loadTest}}
     <h2>Shares</h2>
     <div class="share-list">
         {{> shareList }}
@@ -8,23 +7,9 @@
 
 
 <template name="shareList">
-
+    {{#each images}}
         <div class="item">
             <img src="{{src}}">
         </div>
-
-</template>
-
-
-<template name="loadTest">
-    <form method="POST" enctype="multipart/form-data">
-        <input type="file" class="jqUploadclass" data-form-data='{{ submitData }}'> {{#with infoLabel}} {{ infoLabel}}
-        <button class="start">StartUpload</button>
-        <div style="width: 200px; height: 30px; border: 1px solid black">
-            <div style="background: red; height: 30px; width: {{ progress }}">
-                {{ progress }}
-            </div>
-        </div>
-        {{/with}}
-    </form>
+    {{/each}}
 </template>

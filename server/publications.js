@@ -1,7 +1,3 @@
-Meteor.publish('items', function() {
-  return Items.find();
-});
-
-Meteor.publish('uploads', function() {
-  return Uploads.find();
+Meteor.publish('images', function () {
+    return Images.find();
 })

@@ -1,9 +1,19 @@
-Template['loadTest'].helpers({
-  src: function() {
-    if (this.type.indexOf('image') >= 0) {
-      return 'upload/' + this.path;
-    } else return 'file_icon.png';
-  }
+Meteor.startup(function () {
+    Uploader.finished = function (index, fileInfo, templateContext) {
+        Images.insert(fileInfo);
+    }
+});
+
+Template.shareList.helpers({
+    src: function () {
+        if (this.type.indexOf('image') >= 0) {
+            return 'upload' + this.path;
+        } else return 'file_icon.png';
+    },
+
+    images: function () {
+        return Images.find();
+    }
 });
 
 Template.loadTest.created = function () {
