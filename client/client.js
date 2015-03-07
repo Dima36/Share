@@ -6,28 +6,32 @@ Meteor.startup(function () {
 
 Template.shareList.helpers({
     src: function () {
-        return 'upload' + this.path;
+        return 'upload/small' + this.path;
     },
     images: function () {
         return Images.find();
     }
 });
 
-Template.loadTest.created = function () {
+Template.addShare.created = function () {
     Uploader.init(this);
 }
 
-Template.loadTest.rendered = function () {
+Template.addShare.rendered = function () {
     Uploader.render.call(this);
 };
 
-Template.loadTest.events({
+Template.addShare.events({
     'click .start': function (e) {
         Uploader.startUpload.call(Template.instance(), e);
+
+
+        var fileInfo = Template.instance().info.get()
+        console.log(fileInfo);
     }
 });
 
-Template.loadTest.helpers({
+Template.addShare.helpers({
     'infoLabel': function () {
         var instance = Template.instance();
 

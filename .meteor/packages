@@ -9,4 +9,4 @@ insecure
 tomi:upload-server
 tomi:upload-jquery
 iron:router
-sacha:spin
+multiply:iron-router-progress

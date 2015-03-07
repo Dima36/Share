@@ -9,7 +9,9 @@
 <template name="shareList">
     {{#each images}}
         <div class="item">
-            <img src="{{src}}">
+            <a href="{{url}}">
+                <img src="{{src}}" data-srcbig="{{url}}">
+            </a>
         </div>
     {{/each}}
 </template>
