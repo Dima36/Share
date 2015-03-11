@@ -2,11 +2,16 @@ Meteor.startup(function () {
     Uploader.finished = function (index, fileInfo, templateContext) {
         Images.insert(fileInfo);
     }
+    $(document).on("change", "input:file", function () {
+        setTimeout(function () {
+            $('.upload-control.start').trigger('click');
+        }, 200)
+    });
 });
 
 Template.shareList.helpers({
     src: function () {
-        return 'upload/small' + this.path;
+        return this.path;
     },
     images: function () {
         return Images.find();
@@ -24,10 +29,6 @@ Template.addShare.rendered = function () {
 Template.addShare.events({
     'click .start': function (e) {
         Uploader.startUpload.call(Template.instance(), e);
-
-
-        var fileInfo = Template.instance().info.get()
-        console.log(fileInfo);
     }
 });
 

@@ -4,16 +4,19 @@
 
 <template name="addShare">
     <form method="POST" enctype="multipart/form-data">
-        <input type="file" class="jqUploadclass" accept="image/*" data-form-data='{{ submitData }}'>
+        <input type="file" class="jqUploadclass" accept="image/*" data-form-data=''>
         {{#with infoLabel}}
         {{ infoLabel}}
-            <button class="start">StartUpload</button>
+            <button class="start upload-control" style="display: none;"></button>
             <div style="width: 200px; height: 30px; border: 1px solid black">
                 <div style="background: red; height: 30px; width: {{ progress }}">
                     {{ progress }}
                 </div>
             </div>
-
+            <input type="text" placeholder="Name">
+            <input type="text" placeholder="Description">
+            <input type="text" placeholder="Tags">
+            <input type="submit" value="Share">
         {{/with}}
     </form>
 </template>
